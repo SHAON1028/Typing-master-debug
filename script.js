@@ -46,7 +46,7 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
-    
+
     errorCount++;
     console.log(errorCount);
   }
@@ -115,7 +115,7 @@ const start = () => {
 
     // finished timer
     if (count == 0) {
-     
+
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "";
@@ -123,8 +123,8 @@ const start = () => {
 
       clearInterval(startCountdown);
       startTime = new Date().getTime();
-      
-      
+
+
     }
     count--;
   }, 1000);
@@ -139,7 +139,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent =parseInt((currentTime - startTime) / 1000) ;
+  const timeSpent = parseInt((currentTime - startTime) / 1000);
 
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
